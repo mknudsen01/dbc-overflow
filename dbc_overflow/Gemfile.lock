@@ -153,6 +153,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
+  bcrypt-ruby (~> 3.0.0)
   bcrypt-ruby
   capybara
   cool_faker
