@@ -1,2 +1,16 @@
 <%= link_to 'Sign Up', new_user_path %>
-<%= link_to 'Log In', new_user_path %>
+<div></div>
+
+<% if flash[:message] %><div><%= flash[:message] %></div><% end %>
+  <% if flash[:error] %><div><%= flash[:error] %></div><% end %>
+
+  <%= form_for :users, url: users_process_login_path do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation , 'Password Confirmation'%>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit 'Login' %>
+<% end %>
+
