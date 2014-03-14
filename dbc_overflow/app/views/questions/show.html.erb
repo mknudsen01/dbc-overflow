@@ -3,7 +3,13 @@
     <h1><%= @question.title %></h1>
     <div class="question_body">
       <p><%= @question.body %></p>
+      <ul>
+        <% @question.comments.each do |comment| %>
+          <li><%= render 'shared/show_comment', comment: comment %></li>
+        <% end %>
+      </ul>
       <%= link_to('edit', edit_question_path(@question)) %>
+      <%= link_to('Comment', new_question_comment_path(@question)) %>
     </div>
 
     <div class="answers">
@@ -11,13 +17,21 @@
       <ul>
         <% @answers.each do |answer| %>
           <li><%= answer.body %><br>
+            <ul>
+              <% answer.comments.each do |comment| %>
+                <li><%= render 'shared/show_comment', comment: comment %></li>
+              <% end %>
+            </ul>
               <%= link_to('edit', edit_question_answer_path( @question, answer ) ) %>
+              <%= link_to('Comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
           </li>
         <% end %>
       </ul>
     </div>
     <div class="new_answer">
       <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
+
     </div>
+
   </div>
 </div>

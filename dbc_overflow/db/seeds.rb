@@ -27,25 +27,25 @@ end
   Question.find(index).answers << answer
 end
 
-# # Adding Comments to Questions
-# 10.times do
-#   index = Random.rand(User.count) + 1
-#   comment = Comment.create(body: Faker::Lorem.sentence)
-#   comment.user = User.find(index)
+# Adding Comments to Questions
+10.times do
+  index = Random.rand(User.count) + 1
+  comment = Comment.create(body: Faker::Lorem.sentence)
+  comment.user = User.find(index)
 
-#   index = Random.rand(Question.count) + 1
-#   comment.commentable = Question.find(index)
-# end
+  index = Random.rand(Question.count) + 1
+  comment.commentable = Question.find(index)
+end
 
-# # Adding Comments to Answers
-# 10.times do
-#   index = Random.rand(User.count) + 1
-#   comment = Comment.create(body: Faker::Lorem.sentence)
-#   comment.user = User.find(index)
+# Adding Comments to Answers
+10.times do
+  index = Random.rand(User.count) + 1
+  comment = Comment.create(body: Faker::Lorem.sentence)
+  comment.user = User.find(index)
 
-#   index = Random.rand(Answer.count) + 1
-#   comment.commentable = Answer.find(index)
-# end
+  index = Random.rand(Answer.count) + 1
+  comment.commentable = Answer.find(index)
+end
 
 
 

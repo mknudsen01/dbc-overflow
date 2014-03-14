@@ -4,5 +4,6 @@ class Question < ActiveRecord::Base
   validates_presence_of :title, :body
 
   has_many :answers
+  has_many :comments, :as => :commentable
   belongs_to :user
 end
