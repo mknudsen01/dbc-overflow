@@ -53,8 +53,6 @@ describe QuestionsController do
         expect(response).to be_redirect
         }.to_not change { Question.count }
     end
-
-
   end
 
   context "#edit" do

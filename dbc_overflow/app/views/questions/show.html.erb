@@ -10,9 +10,14 @@
       <h4>Answers</h4>
       <ul>
         <% @answers.each do |answer| %>
-          <li><%= answer.body %></li>
+          <li><%= answer.body %><br>
+              <%= link_to('edit', edit_question_answer_path( @question, answer ) ) %>
+          </li>
         <% end %>
       </ul>
+    </div>
+    <div class="new_answer">
+      <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
     </div>
   </div>
 </div>

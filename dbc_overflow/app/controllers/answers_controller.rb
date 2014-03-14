@@ -1,8 +1,5 @@
 class AnswersController < ApplicationController
 
-  def index
-    @answers = Answer.all
-  end
 
   # def show
   #   dont need this
@@ -14,15 +11,15 @@ class AnswersController < ApplicationController
 
   def create
     #add logic here to make sure question is correct
-    @question = Question.find(question.id)
+    @question = Question.find(params[:question_id])
     @answer = @question.answers.new
     @answer.body = params[:answer][:body]
 
     if @answer.save
-      redirect_to answer_path(@answer)
+      redirect_to question_path( @question )
     else
       #put errors in flash here
-      redirect_to new_answer_path
+      redirect_to new_question_answer_path
     end
   end
 
@@ -34,7 +31,7 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     if @answer
       @answer.body = params[:answer][:body]
-      redirect_to( question_answer_path(@answer.question, @answer) ) && return if @answer.save
+      redirect_to( question_path(@answer.question) ) && return if @answer.save
     end
     #render errors
     redirect_to edit_question_answer_path(@answer.question, @answer)
