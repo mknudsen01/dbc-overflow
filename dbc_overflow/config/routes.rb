@@ -5,4 +5,8 @@ DbcOverflow::Application.routes.draw do
   get 'users/logout', :to => 'users#logout'
   resources :users
 
+   resources :questions, except: [:destroy] do
+     resources :answers, except: [:destroy]
+   end
+
 end
