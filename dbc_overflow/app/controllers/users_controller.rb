@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   def process_login
     user =User.find_by_email(params[:users][:email])
+    p '------------'
+    p user.logged_in?
+    p '------------'
     if user && user.authorized?(params)
       session[:id] = user.id
       session[:username] = user.username
