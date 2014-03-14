@@ -1,12 +1,15 @@
 class AnswersController < ApplicationController
 
   def index
+
   end
 
-  def show
-  end
+  # def show
+  #   dont need this
+  # end
 
   def new
+    @answer = Answer.new
   end
 
   def create
