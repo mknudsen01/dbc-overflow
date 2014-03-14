@@ -11,8 +11,4 @@ class User < ActiveRecord::Base
     self.authenticate(params[:users][:password])
   end
 
-  def logged_in?
-    self != nil
-  end
-
 end
