@@ -1,5 +1,5 @@
 Welcome
-<%= session[:username] %>! <br>
+<%= @user.username %>! <br>
 You are Logged in!<br>
 
 <%= link_to 'Logout', session_path, :method => 'delete' %>

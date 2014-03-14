@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
 
+  before_filter :redirect_if_logged_in,  :except => [:index,:show]
+
+  def index
+    redirect_to user_path(id: current_user.id) if logged_in?
+  end
+
+  def show
+    @user = current_user
+  end
+
   def new
     @user = User.new
   end
