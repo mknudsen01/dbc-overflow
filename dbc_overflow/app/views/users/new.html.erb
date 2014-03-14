@@ -1,1 +1,2 @@
-<%= render 'shared/form' %>
+<% if flash[:error] %><div><%= flash[:error] %></div><% end %>
+<%= render 'shared/login_form' %>
