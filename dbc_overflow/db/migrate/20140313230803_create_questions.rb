@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string   :title, null: false
       t.string   :body, null: false
       t.integer  :best_answer_id
-      belongs_to :user
+      t.belongs_to :user
     end
   end
 end
