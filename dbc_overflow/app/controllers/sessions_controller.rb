@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:id] = user.id
       redirect_to user
     else
-      flash[:error] = 'Invalid Email'
+      flash[:error] = 'Invalid Login'
       redirect_to users_path
       end
     end

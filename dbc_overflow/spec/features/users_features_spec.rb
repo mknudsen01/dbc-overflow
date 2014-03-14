@@ -1,12 +1,11 @@
 require 'spec_helper'
 describe "Users", :js => true do
-  # As you can see here we're using let! as opposed to let. By default, let, lazy loads the variable. Meaning, it won't actually do the work until you need the variable. However, let! eager loads it, meaning, do the work right away. The reason we want to eager load here is because we need category to be available right away when we visit the root_path, otherwise, the test will fail as no categories actually exist.
-  let!(:category) { FactoryGirl.create :category }
-  # we can override anything in our factories by passing a key value pair.
-  let!(:post) { FactoryGirl.create :post, :category => category }
+  let!(:user) { User.create(username: 'test',
+                            email: 'test@test.com',
+                            password: 'testing',
+                            password_confirmation: 'testing')}
   context "homepage" do
-    it "lists all the Categories" do
-      # capybara allows us to visit a page (we use js => true on top to open the browser) and inspect the elements on it. It returns a page object that we can call a bunch of stuff on. Try puts page.inspect after line 8
+    it "displays login form" do
       visit root_path
       expect(page).to have_content category.name
     end
