@@ -5,12 +5,14 @@ DbcOverflow::Application.routes.draw do
   resources :users
   resources :sessions,  :only => [:create, :destroy]
   resources :questions, except: [:destroy] do
-    resources :comments
+    resources :comments, except: [:destroy]
     resources :answers, except: [:destroy]
   end
 
+  resources :comments,   :only => [:destroy]
+
   resources :answers, only: [] do
-    resources :comments
+    resources :comments, except: [:destroy]
   end
 
 end

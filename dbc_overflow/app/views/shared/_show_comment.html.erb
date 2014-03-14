@@ -1,1 +1,3 @@
 <p><%= comment.body %></p>
+<%= link_to 'Edit comment', polymorphic_url([comment.commentable, comment], action: 'edit') %>
+<%= link_to 'Delete comment', comment, method: 'delete' %>
