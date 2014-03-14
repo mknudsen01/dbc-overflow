@@ -5,3 +5,48 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+10.times do
+  password = Faker::Lorem.word
+  User.create(username: Faker::Lorem.word, email: Faker::Internet.email, password: password, password_confirmation: password)
+end
+User.create(username: "test", email: "test@test.coms", password: "test", password_confirmation: "test")
+
+
+10.times do
+  index = Random.rand(User.count) + 1
+  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph).user = User.find(index)
+end
+
+20.times do
+  index = Random.rand(User.count) + 1
+  answer = Answer.create(body: Faker::Lorem.paragraph)
+  answer.user = User.find(index)
+
+  index = Random.rand(Question.count) + 1
+  Question.find(index).answers << answer
+end
+
+# # Adding Comments to Questions
+# 10.times do
+#   index = Random.rand(User.count) + 1
+#   comment = Comment.create(body: Faker::Lorem.sentence)
+#   comment.user = User.find(index)
+
+#   index = Random.rand(Question.count) + 1
+#   comment.commentable = Question.find(index)
+# end
+
+# # Adding Comments to Answers
+# 10.times do
+#   index = Random.rand(User.count) + 1
+#   comment = Comment.create(body: Faker::Lorem.sentence)
+#   comment.user = User.find(index)
+
+#   index = Random.rand(Answer.count) + 1
+#   comment.commentable = Answer.find(index)
+# end
+
+
+
+p "Users: #{User.count} - Questions: #{Question.count} - Answers #{Answer.count} - Comments #{Comment.count}"
