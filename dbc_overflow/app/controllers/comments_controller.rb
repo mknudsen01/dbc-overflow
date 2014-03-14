@@ -1,25 +1,35 @@
 class CommentsController < ApplicationController
-  before_filter :load_question
-  before_filter :load_commentable
+  before_filter :load_question, except: [:destroy]
+  before_filter :load_commentable, except: [:destroy]
   before_filter :load_comment, except: [:create, :new]
 
   def new
     @comment = Comment.new
-    render :partial => 'shared/comment_form', :locals => {
-      question: @question,
-      comment: Comment.new,
-      commentable: @commentable
-    }
+    render  :partial => 'shared/comment_form',
+            :locals => {
+              question: @question,
+              comment: Comment.new,
+              commentable: @commentable
+            }
   end
 
   def create
     @comment = Comment.new(params[:comment])
     if @comment.valid?
-      # @comment.user = current_user
+      #@comment.user = current_user
       @comment.commentable = @commentable
       @comment.save
     end
     redirect_to @question
+  end
+
+  def edit
+    render  :partial => 'shared/comment_form',
+            :locals => {
+              question: @question,
+              comment: @comment,
+              commentable: @commentable
+            }
   end
 
   def show
@@ -33,6 +43,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.delete
+    redirect_to :back
   end
 
   private
