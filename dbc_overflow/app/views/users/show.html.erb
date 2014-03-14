@@ -2,4 +2,4 @@ Welcome
 <%= session[:username] %>! <br>
 You are Logged in!<br>
 
-<%= link_to 'Logout', users_logout_path %>
+<%= link_to 'Logout', session_path, :method => 'delete' %>
