@@ -1,0 +1,5 @@
+<h1>Update your answer</h1>
+<%= form_for @answer, url: { action: "update" }, html: {class: "answer_form"} do |f|%>
+  <%= f.text_area :body, size: "60x20" %><br>
+  <%= f.submit "Update" %>
+<% end %>
