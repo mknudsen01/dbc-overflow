@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to root_path
     else
-      flash[:error] = 'Email must be unique'
+      flash[:error] = user.errors.full_messages
       redirect_to new_user_path
     end
   end

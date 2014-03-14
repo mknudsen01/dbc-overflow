@@ -4,17 +4,17 @@ describe AnswersController do
   let!(:question) { FactoryGirl.create :question }
   let!(:answer) { FactoryGirl.create :answer}
 
-  # context "#index" do
-  #   it "is sucessful" do
-  #     get :index, :question => question
-  #     expect(response).to be_success
-  #   end
+  context "#index" do
+    it "is sucessful" do
+      get :index, :question => question
+      expect(response).to be_success
+    end
 
-  #   it "assigns @answers to Answer.all" do
-  #     get :index
-  #     expect(assigns(:answers)).to eq(Answer.all)
-  #   end
-  # end
+    it "assigns @answers to Answer.all" do
+      get :index
+      expect(assigns(:answers)).to eq(Answer.all)
+    end
+  end
 
   context "#show" do
   end
