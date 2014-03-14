@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_filter :redirect_if_logged_out, :except => [:index, :show]
 
 
   # def show

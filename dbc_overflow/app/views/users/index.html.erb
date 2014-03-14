@@ -4,13 +4,11 @@
 <% if flash[:message] %><div><%= flash[:message] %></div><% end %>
   <% if flash[:error] %><div><%= flash[:error] %></div><% end %>
 
-  <%= form_for :users, url: users_process_login_path do |f| %>
+  <%= form_for :users, url: sessions_path do |f| %>
     <%= f.label :email %>
     <%= f.text_field :email %>
     <%= f.label :password %>
     <%= f.password_field :password %>
-    <%= f.label :password_confirmation , 'Password Confirmation'%>
-    <%= f.password_field :password_confirmation %>
     <%= f.submit 'Login' %>
 <% end %>
 
