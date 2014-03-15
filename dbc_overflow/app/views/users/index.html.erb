@@ -1,6 +1,5 @@
-<%= link_to 'Sign Up', new_user_path %>
-<div></div>
-
+<div>
+<h1>Login:</h1>
 <% if flash[:message] %><div><%= flash[:message] %></div><% end %>
   <% if flash[:error] %><div><%= flash[:error] %></div><% end %>
 
@@ -12,3 +11,4 @@
     <%= f.submit 'Login' %>
 <% end %>
 
+</div>
