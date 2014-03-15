@@ -8,7 +8,9 @@
           <li><%= render 'shared/show_comment', comment: comment %></li>
         <% end %>
       </ul>
-      <%= link_to('edit', edit_question_path(@question)) %>
+      <% if @question_owner %>
+        <%= link_to('edit question', edit_question_path(@question)) %>
+      <% end %>
       <%= link_to('Comment', new_question_comment_path(@question)) %>
     </div>
 
@@ -16,21 +18,12 @@
       <h4>Answers</h4>
       <ul>
         <% @answers.each do |answer| %>
-          <li><%= answer.body %><br>
-            <ul>
-              <% answer.comments.each do |comment| %>
-                <li><%= render 'shared/show_comment', comment: comment %></li>
-              <% end %>
-            </ul>
-              <%= link_to('edit', edit_question_answer_path( @question, answer ) ) %>
-              <%= link_to('Comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
-          </li>
+          <%= render 'answers/show_answer_options', :answer => answer %>
         <% end %>
       </ul>
     </div>
     <div class="new_answer">
       <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
-
     </div>
 
   </div>

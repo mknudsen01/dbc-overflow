@@ -20,6 +20,8 @@ class ApplicationController < ActionController::Base
     redirect_to :back if logged_in?
   end
 
-
+  def owner?(ownable)
+    ownable.user_id == session[:id]
+  end
 
 end
