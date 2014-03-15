@@ -11,7 +11,7 @@
   8.times { password << rand(10).to_s }
   User.create(username: Faker::Lorem.word, email: Faker::Internet.email, password: password, password_confirmation: password)
 end
-User.create(username: "test", email: "test@test.coms", password: "testtest", password_confirmation: "testtest")
+User.create(username: "test", email: "test@test.com", password: "testtest", password_confirmation: "testtest")
 
 
 10.times do
