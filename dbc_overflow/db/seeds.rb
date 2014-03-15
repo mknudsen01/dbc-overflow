@@ -7,10 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do
-  password = Faker::Lorem.word
+  password = ''
+  8.times { password << rand(10).to_s }
   User.create(username: Faker::Lorem.word, email: Faker::Internet.email, password: password, password_confirmation: password)
 end
-User.create(username: "test", email: "test@test.coms", password: "test", password_confirmation: "test")
+User.create(username: "test", email: "test@test.coms", password: "testtest", password_confirmation: "testtest")
 
 
 10.times do
