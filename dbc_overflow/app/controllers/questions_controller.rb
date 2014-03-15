@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers
+    @question_owner = owner?(@question)
+    @user = session[:id]
   end
 
   def new
@@ -19,6 +21,7 @@ class QuestionsController < ApplicationController
     @question = Question.new
     @question.body = params[:question][:body]
     @question.title = params[:question][:title]
+    @question.user = User.find(session[:id])
     #logic for current user goes here
     if @question.save
       redirect_to question_path(@question)

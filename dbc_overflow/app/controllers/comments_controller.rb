@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     if @comment.valid?
-      #@comment.user = current_user
+      @comment.user = current_user
       @comment.commentable = @commentable
       @comment.save
     end

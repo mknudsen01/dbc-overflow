@@ -1,0 +1,11 @@
+<li><%= answer.body %><br>
+  <ul>
+    <% answer.comments.each do |comment| %>
+      <li><%= render 'shared/show_comment', comment: comment %></li>
+    <% end %>
+  </ul>
+    <% if @user == answer.user_id %>
+      <%= link_to('edit answer', edit_question_answer_path( @question, answer ) ) %>
+    <% end %>
+    <%= link_to('Comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
+</li>
