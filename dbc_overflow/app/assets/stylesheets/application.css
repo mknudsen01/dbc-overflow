@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   background: #404040;
-  height: 64px;
+  height: 74px;
   margin-top: -20px;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 #home a {
-  margin-top: -13px;
+  margin-top: -7px;
   color: steelblue ;
   float: left;
 }
