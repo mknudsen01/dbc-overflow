@@ -1,5 +1,9 @@
+<em>count : <%= comment.votecount %> - up : <%= comment.upvotes %> - down : <%= comment.downvotes %></em>
 <p><%= comment.body %></p>
 <% if @user == comment.user_id %>
+
   <%= link_to 'Edit comment', polymorphic_url([comment.commentable, comment], action: 'edit') %>
   <%= link_to 'Delete comment', comment, method: 'delete' %>
-<% end %>
+  <br>
+  <%= link_to('upvote', comment_upvote_path(comment), method: 'POST') %><%= link_to('downvote', comment_downvote_path(comment), method: 'POST') %>
+<%= end %>
