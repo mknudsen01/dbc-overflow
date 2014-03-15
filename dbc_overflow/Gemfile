@@ -23,7 +23,7 @@ group :test do
   gem 'database_cleaner'
 end
 
-
+gem 'routing_concerns'
 gem 'jquery-rails'
 gem 'debugger'
 gem 'pry'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140313230817) do
+ActiveRecord::Schema.define(:version => 20140314235049) do
 
   create_table "answers", :force => true do |t|
     t.text    "body",        :null => false
@@ -34,11 +34,16 @@ ActiveRecord::Schema.define(:version => 20140313230817) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password_digest"
-    t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.string "username"
+    t.string "password_digest"
+    t.string "email"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.boolean "positive"
+    t.integer "user_id"
+    t.integer "voteable_id"
+    t.string  "voteable_type"
   end
 
 end

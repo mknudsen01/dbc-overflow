@@ -2,6 +2,7 @@
   <div class="question">
     <h1><%= @question.title %></h1>
     <div class="question_body">
+      <em>count : <%= @question.votecount %> - up : <%= @question.upvotes %> - down : <%= @question.downvotes %></em>
       <p><%= @question.body %></p>
       <ul>
         <% @question.comments.each do |comment| %>
@@ -12,6 +13,8 @@
         <%= link_to('edit question', edit_question_path(@question)) %>
       <% end %>
       <%= link_to('Comment', new_question_comment_path(@question)) %>
+      <br>
+      <%= link_to('upvote', question_upvote_path(@question), method: 'POST') %><%= link_to('downvote', question_downvote_path(@question), method: 'POST') %>
     </div>
 
     <div class="answers">

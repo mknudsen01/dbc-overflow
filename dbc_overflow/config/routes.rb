@@ -1,18 +1,23 @@
 DbcOverflow::Application.routes.draw do
   root :to => 'questions#index'
 
+  concern :commentable do
+    resources :comments, except: [:destroy]
+  end
+
+  concern :voteable do
+    post 'upvote' => 'votes#upvote'
+    post 'downvote' => 'votes#downvote'
+  end
 
   resources :users
   resources :sessions,  :only => [:create, :destroy]
-  resources :questions, except: [:destroy] do
-    resources :comments, except: [:destroy]
+  resources :questions, except: [:destroy], concerns: [:commentable, :voteable]  do
     resources :answers, except: [:destroy]
   end
 
-  resources :comments,   :only => [:destroy]
+  resources :comments,   :only => [:destroy], concerns: :voteable
 
-  resources :answers, only: [] do
-    resources :comments, except: [:destroy]
-  end
+  resources :answers, only: [], concerns: [:commentable, :voteable]
 
 end
