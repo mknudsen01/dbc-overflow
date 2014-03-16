@@ -7,12 +7,12 @@ describe "Users", :js => true do
   context "homepage" do
     it "displays login form" do
       visit root_path
-      expect(page).to have_button 'Login'
+      expect(page).to have_link 'log in'
     end
 
     it "displays login form" do
       visit root_path
-      expect(page).to have_link 'Sign Up'
+      expect(page).to have_link 'sign up'
     end
   end
 
