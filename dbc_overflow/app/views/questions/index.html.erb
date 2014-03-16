@@ -2,7 +2,7 @@
   <h1 class="page_title">HEAR YE, ALL QUESTIONS BE HERE</h1>
     <ul class="questions">
       <% @questions.each do |question| %>
-        <li class="question"><%= link_to(question.title, question_path(question)) %></li>
+        <li class="question"><%= link_to(question.title, question_path(question)) %></li><br>
       <% end %>
     </ul>
 
