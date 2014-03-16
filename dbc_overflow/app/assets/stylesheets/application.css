@@ -30,6 +30,16 @@
   float: left;
 }
 
+.search {
+  width: 200px;
+}
+
+.search_bar {
+  margin-top: 25px;
+  display: inline-block;
+}
+
+
 /* BODY */
 
 .container {
@@ -130,6 +140,7 @@ li a:hover {
 
 .questionbody {
   padding-bottom: 20px;
+  min-heigh: 60px;
 }
 
 .answers {
@@ -165,6 +176,7 @@ li a:hover {
 }
 
 .comment_body {
+  font-size: 16px;
   min-height: 50px;
   vertical-align: middle;
   padding-top: 10px;
@@ -174,4 +186,11 @@ li a:hover {
 .makecomment {
   padding: 20px 0;
   border-top: 1px dotted magenta;
+}
+
+/* ANSWERS */
+
+.answers h4 {
+  font-size: 24px;
+
 }
