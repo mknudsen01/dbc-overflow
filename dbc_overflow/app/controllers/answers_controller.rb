@@ -16,7 +16,10 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new
     @answer.body = params[:answer][:body]
 
-    if @answer.save
+    if @answer.valid?
+
+      @answer.user = current_user
+      @answer.save
       redirect_to question_path( @question )
     else
       #put errors in flash here
