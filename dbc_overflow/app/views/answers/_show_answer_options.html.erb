@@ -18,6 +18,7 @@
       <div class="answer_body">
         <div class="answerbody">
           <%= answer.body %><br>
+          answered by: <%= answer %>
           <% if @user == answer.user_id %>
             <%= link_to('edit answer', edit_question_answer_path(@question, answer)) %>
           <% end %>
