@@ -1,4 +1,17 @@
-<li><%= answer.body %><br>
+
+<li>
+  <div class="answer_votes">
+    <div class="upvote">
+      <%= link_to(image_tag('answer_uparrow.png'), answer_upvote_path(answer), method: 'POST') %>
+    </div>
+    <div class="vote-count">
+      <%= answer.votecount %>
+    </div>
+    <div class="downvote">
+      <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST') %>
+    </div>
+  </div>
+  <%= answer.body %><br>
   <ul>
     <% answer.comments.each do |comment| %>
       <li><%= render 'shared/show_comment', comment: comment %></li>
