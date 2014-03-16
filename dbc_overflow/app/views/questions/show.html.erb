@@ -15,14 +15,18 @@
     </div>
 
     <div class="question_body">
-      <%= @question.body %>
+      <div class="questionbody">
+        <%= @question.body %>
+      </div>
         <% @question.comments.each do |comment| %>
           <%= render 'shared/show_comment', comment: comment %>
         <% end %>
       <% if @question_owner %>
         <%= link_to('edit question', edit_question_path(@question)) %>
       <% end %>
-      <%= link_to('Comment', new_question_comment_path(@question)) %>
+      <div class="makecomment">
+        <%= link_to('Comment', new_question_comment_path(@question)) %>
+      </div>
     </div>
   </div>
 

@@ -128,8 +128,12 @@ li a:hover {
   min-height: 100px;
 }
 
+.questionbody {
+  padding-bottom: 20px;
+}
+
 .answers {
-  border-top: solid 1px gray;
+  border-top: solid 2px gray;
 }
 
 .comment_votes {
@@ -144,7 +148,6 @@ li a:hover {
 .comment {
   display: block;
   vertical-align: middle;
-  margin-top: 20px;
   border-top: 1px dotted magenta;
 }
 
@@ -165,4 +168,10 @@ li a:hover {
   min-height: 50px;
   vertical-align: middle;
   padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.makecomment {
+  padding: 20px 0;
+  border-top: 1px dotted magenta;
 }
