@@ -8,7 +8,7 @@ describe SessionsController do
     it "creates session id with valid attr" do
       post :create, {:users => { email: user.email, password: user.password}}
       expect(request.session[:id]).to be user.id
-      response.should redirect_to "/users/#{user.id}"
+      response.should redirect_to "/questions"
     end
 
     it "does not create session id with invalid attr" do
