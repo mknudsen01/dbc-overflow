@@ -1,0 +1,6 @@
+<div class="search bar">
+  <%= form_tag( "/search", :method => "post") do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag "Search Questions" %>
+  <% end %>
+</div>

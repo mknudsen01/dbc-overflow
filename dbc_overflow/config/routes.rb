@@ -10,6 +10,8 @@ DbcOverflow::Application.routes.draw do
     post 'downvote' => 'votes#downvote'
   end
 
+  post 'search' => 'searches#search'
+
   resources :users
   resources :sessions,  :only => [:create, :destroy]
   resources :questions, except: [:destroy], concerns: [:commentable, :voteable]  do
