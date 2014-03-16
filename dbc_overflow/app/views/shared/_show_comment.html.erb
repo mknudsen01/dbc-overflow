@@ -14,6 +14,7 @@
 
   <div class="comment_body">
     <%= comment.body %><br>
+     - <%= comment.user.username %>
     <% if @user == comment.user_id %>
       <%= link_to 'edit', polymorphic_url([comment.commentable, comment], action: 'edit') %>
       <%= link_to 'delete', comment, method: 'delete' %>
