@@ -9,14 +9,16 @@
 10.times do
   password = ''
   8.times { password << rand(10).to_s }
-  User.create(username: Faker::Lorem.word, email: Faker::Internet.email, password: password, password_confirmation: password)
+  User.create(username: CoolFaker::Character.name, email: Faker::Internet.email, password: password, password_confirmation: password)
 end
 User.create(username: "test", email: "test@test.com", password: "testtest", password_confirmation: "testtest")
 
 
 10.times do
   index = Random.rand(User.count) + 1
-  Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph).user = User.find(index)
+  question = Question.create(title: CoolFaker::Team.slogan + '?', body: Faker::Lorem.paragraph)
+  question.user = User.find(index)
+  question.save
 end
 
 20.times do
@@ -26,6 +28,7 @@ end
 
   index = Random.rand(Question.count) + 1
   Question.find(index).answers << answer
+  answer.save
 end
 
 # Adding Comments to Questions
@@ -36,6 +39,8 @@ end
 
   index = Random.rand(Question.count) + 1
   comment.commentable = Question.find(index)
+  comment.save
+  p comment
 end
 
 # Adding Comments to Answers
@@ -46,6 +51,8 @@ end
 
   index = Random.rand(Answer.count) + 1
   comment.commentable = Answer.find(index)
+  comment.save
+  p comment
 end
 
 

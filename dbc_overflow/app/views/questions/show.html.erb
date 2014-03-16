@@ -18,7 +18,7 @@
       <div class="questionbody">
         <%= @question.body %><br>
         <div class="question_asker">
-          asked by: <%= @question %>
+          asked by: <%= @question.user.username %>
         </div>
       </div>
         <% @question.comments.each do |comment| %>
