@@ -1,4 +1,4 @@
-/* NAV BAR */
+/******************** NAV BAR ********************/
 
 .navbar {
   width: 100%;
@@ -30,8 +30,8 @@
   float: left;
 }
 
-.search {
-  width: 200px;
+#search {
+  width: 275px;
 }
 
 .search_bar {
@@ -40,7 +40,7 @@
 }
 
 
-/* BODY */
+/******************** BODY ********************/
 
 .container {
     margin: 10px auto;
@@ -62,7 +62,7 @@ h1 {
 
 
 
-/* UNORDEDERED LISTS AND LINKS */
+/******************** UNORDEDERED LISTS AND LINKS ********************/
 
 ul {
   list-style-type: none;
@@ -83,7 +83,12 @@ li a:hover {
   color: magenta;
 }
 
-/* QUESTIONS */
+
+/******************** QUESTIONS ********************/
+
+.actualquestiontitle {
+  color: #1947D1;
+}
 
 .questions {
   padding-bottom: 20px;
@@ -97,8 +102,15 @@ li a:hover {
   display: inline-block;
 }
 
+.question_asker {
+  font-size: 15px;
+  color: #CCCCCC;
+  text-align: right;
+}
 
-/* ADD QUESTION BUTTON */
+
+/******************** ADD QUESTION BUTTON ********************/
+
 .addquestion a {
   padding: 5px;
   text-decoration: none;
@@ -140,27 +152,17 @@ li a:hover {
 
 .questionbody {
   padding-bottom: 20px;
-  min-heigh: 60px;
+  min-height: 60px;
 }
 
-.answers {
-  border-top: solid 2px gray;
-}
+
+/******************** COMMENTS ********************/
 
 .comment_votes {
   float: left;
   vertical-align: middle;
   display: inline;
   min-height: 50px;
-  display: inline-block;
-  padding-right: 10px;
-}
-
-.answer_votes {
-  float: left;
-  vertical-align: middle;
-  display: inline;
-  min-height: 30px;
   display: inline-block;
   padding-right: 10px;
 }
@@ -194,12 +196,100 @@ li a:hover {
 
 .makecomment {
   padding: 20px 0;
-  border-top: 1px dotted magenta;
 }
 
-/* ANSWERS */
+.makecomment a {
+  padding: 3px 5px;
+  text-decoration: none;
+  background: #404040;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.75em;
+  transition: background 0.3s ease;
+}
+
+.makecomment a:hover {
+  background: magenta;
+  color: white;
+}
+
+
+/******************** ANSWERS ********************/
+
+.answers {
+  border-top: solid 3px #ADADAD;
+}
 
 .answers h4 {
-  font-size: 24px;
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
 
+.complete_answer {
+  min-height: 60px;
+  display: block;
+}
+
+.answer_votes {
+  float: left;
+  vertical-align: middle;
+  display: inline;
+  min-height: 60px;
+  display: inline;
+  padding-right: 10px;
+  width: 40px;
+}
+
+.answers ul {
+  padding-left: 0;
+}
+
+.answer_body {
+  float: right;
+  display: inline;
+  width: 750px;
+  min-height: 40px;
+}
+
+.answerbody {
+  min-height: 50px;
+  font-size: 1.25em;
+}
+
+
+.new_answer {
+  padding: 20px 0;
+}
+
+.new_answer a {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 3px 5px;
+  text-decoration: none;
+  background: #404040;
+  color: white;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.new_answer a:hover {
+  background: magenta;
+}
+
+.answercomments {
+  width: 750px;
+  display: block;
+}
+
+.single_answer {
+  padding-top: 20px;
+  width: 800px;
+  float: left;
+  display: block;
+  border-top: solid 1px gray;
+}
+
+.makecomment {
 }

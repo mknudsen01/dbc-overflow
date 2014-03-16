@@ -1,6 +1,6 @@
 <div class="container">
   <div class="question">
-    <h1><%= @question.title %></h1>
+    <h1 class="actualquestiontitle"><%= @question.title %></h1>
 
     <div class="question_votes">
       <div class="upvote">
@@ -16,7 +16,10 @@
 
     <div class="question_body">
       <div class="questionbody">
-        <%= @question.body %>
+        <%= @question.body %><br>
+        <div class="question_asker">
+          asked by: <%= @question %>
+        </div>
       </div>
         <% @question.comments.each do |comment| %>
           <%= render 'shared/show_comment', comment: comment %>
@@ -25,20 +28,20 @@
         <%= link_to('edit question', edit_question_path(@question)) %>
       <% end %>
       <div class="makecomment">
-        <%= link_to('Comment', new_question_comment_path(@question)) %>
+        <%= link_to('comment', new_question_comment_path(@question)) %>
       </div>
     </div>
   </div>
 
   <div class="answers">
-    <h4>Answers</h4>
+    <h4>Answers: <%= @answers.count %></h4>
     <ul>
       <% @answers.each do |answer| %>
         <%= render 'answers/show_answer_options', :answer => answer %>
       <% end %>
     </ul>
-  </div>
-  <div class="new_answer">
-    <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
+    <div class="new_answer">
+      <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
+    </div>
   </div>
 </div>

@@ -1,24 +1,41 @@
+<div class="complete_answer">
+  <li>
+    <div class="single_answer">
+      <div class="answer_votes">
+        <div class="upvote">
+          <%= link_to(image_tag('answer_uparrow.png'), answer_upvote_path(answer), method: 'POST') %>
+        </div>
 
-<li>
-  <div class="answer_votes">
-    <div class="upvote">
-      <%= link_to(image_tag('answer_uparrow.png'), answer_upvote_path(answer), method: 'POST') %>
+        <div class="vote-count">
+          <%= answer.votecount %>
+        </div>
+
+        <div class="downvote">
+          <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST') %>
+        </div>
+
+      </div>
+      <div class="answer_body">
+        <div class="answerbody">
+          <%= answer.body %><br>
+          answered by: <%= answer %>
+          <% if @user == answer.user_id %>
+            <%= link_to('edit answer', edit_question_answer_path(@question, answer)) %>
+          <% end %>
+        </div>
+
+        <ul>
+          <div class="answercomments">
+            <% answer.comments.each do |comment| %>
+              <li><%= render 'shared/show_comment', comment: comment %></li>
+            <% end %>
+          </div>
+        </ul>
+
+        <div class="makecomment">
+          <%= link_to('comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
+        </div>
+      </div>
     </div>
-    <div class="vote-count">
-      <%= answer.votecount %>
-    </div>
-    <div class="downvote">
-      <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST') %>
-    </div>
-  </div>
-  <%= answer.body %><br>
-  <ul>
-    <% answer.comments.each do |comment| %>
-      <li><%= render 'shared/show_comment', comment: comment %></li>
-    <% end %>
-  </ul>
-    <% if @user == answer.user_id %>
-      <%= link_to('edit answer', edit_question_answer_path( @question, answer ) ) %>
-    <% end %>
-    <%= link_to('Comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
-</li>
+  </li>
+</div>
