@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class="all_questions">HEAR YE, ALL QUESTIONS BE HERE</h1>
-    <ul>
+  <h1 class="page_title">HEAR YE, ALL QUESTIONS BE HERE</h1>
+    <ul class="questions">
       <% @questions.each do |question| %>
-        <li><%= link_to(question.title, question_path(question)) %></li>
+        <li class="question"><%= link_to(question.title, question_path(question)) %></li>
       <% end %>
     </ul>
 
   <div class="addquestion">
-    <%= link_to('Ask a Question', new_question_path)  %>
+    <%= link_to('Ask a Question', new_question_path) %>
   </div>
 </div>

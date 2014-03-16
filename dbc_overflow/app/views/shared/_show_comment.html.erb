@@ -1,9 +1,24 @@
-<em>count : <%= comment.votecount %> - up : <%= comment.upvotes %> - down : <%= comment.downvotes %></em>
-<p><%= comment.body %></p>
-<% if @user == comment.user_id %>
 
-  <%= link_to 'Edit comment', polymorphic_url([comment.commentable, comment], action: 'edit') %>
-  <%= link_to 'Delete comment', comment, method: 'delete' %>
-  <br>
-  <%= link_to('upvote', comment_upvote_path(comment), method: 'POST') %><%= link_to('downvote', comment_downvote_path(comment), method: 'POST') %>
-<% end %>
+<div class="comment">
+  <div class="comment_votes">
+    <div class="comment-upvote">
+      <%= link_to(image_tag('comment_uparrow.png'), comment_upvote_path(comment), method: 'POST') %>
+    </div>
+    <div class="comment-vote-count">
+      <%= comment.votecount %>
+    </div>
+    <div class="comment-downvote">
+      <%= link_to(image_tag('comment_downarrow.png'), comment_downvote_path(comment), method: 'POST') %>
+    </div>
+  </div>
+
+  <div class="comment_body">
+    <%= comment.body %><br>
+    <% if @user == comment.user_id %>
+      <%= link_to 'edit', polymorphic_url([comment.commentable, comment], action: 'edit') %>
+      <%= link_to 'delete', comment, method: 'delete' %>
+    <% end %>
+  </div>
+
+
+</div>

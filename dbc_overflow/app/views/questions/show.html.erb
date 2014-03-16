@@ -1,33 +1,40 @@
 <div class="container">
   <div class="question">
     <h1><%= @question.title %></h1>
+
+    <div class="question_votes">
+      <div class="upvote">
+        <%= link_to(image_tag('uparrow.png'), question_upvote_path(@question), method: 'POST') %>
+      </div>
+      <div class="vote-count">
+        <%= @question.votecount %>
+      </div>
+      <div class="downvote">
+        <%= link_to(image_tag('downarrow.png'), question_downvote_path(@question), method: 'POST') %>
+      </div>
+    </div>
+
     <div class="question_body">
-      <em>count : <%= @question.votecount %> - up : <%= @question.upvotes %> - down : <%= @question.downvotes %></em>
-      <p><%= @question.body %></p>
-      <ul>
+      <%= @question.body %>
         <% @question.comments.each do |comment| %>
-          <li><%= render 'shared/show_comment', comment: comment %></li>
+          <%= render 'shared/show_comment', comment: comment %>
         <% end %>
-      </ul>
       <% if @question_owner %>
         <%= link_to('edit question', edit_question_path(@question)) %>
       <% end %>
       <%= link_to('Comment', new_question_comment_path(@question)) %>
-      <br>
-      <%= link_to('upvote', question_upvote_path(@question), method: 'POST') %><%= link_to('downvote', question_downvote_path(@question), method: 'POST') %>
     </div>
+  </div>
 
-    <div class="answers">
-      <h4>Answers</h4>
-      <ul>
-        <% @answers.each do |answer| %>
-          <%= render 'answers/show_answer_options', :answer => answer %>
-        <% end %>
-      </ul>
-    </div>
-    <div class="new_answer">
-      <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
-    </div>
-
+  <div class="answers">
+    <h4>Answers</h4>
+    <ul>
+      <% @answers.each do |answer| %>
+        <%= render 'answers/show_answer_options', :answer => answer %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="new_answer">
+    <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
   </div>
 </div>
