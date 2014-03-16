@@ -156,6 +156,15 @@ li a:hover {
   padding-right: 10px;
 }
 
+.answer_votes {
+  float: left;
+  vertical-align: middle;
+  display: inline;
+  min-height: 30px;
+  display: inline-block;
+  padding-right: 10px;
+}
+
 .comment {
   display: block;
   vertical-align: middle;
