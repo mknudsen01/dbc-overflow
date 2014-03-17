@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_filter :redirect_if_logged_out, :except => [:index, :show]
 
   def index
-    @questions = Question.all
+    @questions = Question.all.sort_by{|q| -q.votecount}
   end
 
   def show
