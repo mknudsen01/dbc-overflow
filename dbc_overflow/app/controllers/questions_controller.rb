@@ -8,9 +8,10 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @best_answer = Answer.find_by_id(@question.best_answer_id)
     @answers = @question.answers.sort_by {|a| -a.votecount}
     @answers_count = @answers.count
-    @best_answer = @answers.pop()
+    @answers -= [@best_answer]
     @question_owner = owner?(@question)
     @user = session[:id]
   end
@@ -46,5 +47,11 @@ class QuestionsController < ApplicationController
     end
     #render errors
     redirect_to edit_question_path
+  end
+
+  def mark_best_answer
+    @question = Question.find params[:id]
+
+    params[:id]
   end
 end
