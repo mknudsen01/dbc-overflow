@@ -1,13 +1,13 @@
 <div>
-<h1>Login:</h1>
+<h2 id="login">Login:</h2>
 <% if flash[:message] %><div><%= flash[:message] %></div><% end %>
   <% if flash[:error] %><div><%= flash[:error] %></div><% end %>
 
   <%= form_for :users, url: sessions_path do |f| %>
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password %><br>
     <%= f.submit 'Login' %>
 <% end %>
 

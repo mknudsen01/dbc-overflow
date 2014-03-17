@@ -20,13 +20,15 @@
         <div class="question_asker">
           asked by: <%= @question.user.username %>
         </div>
+        <div class="editquestion">
+          <% if @question_owner %>
+            <%= link_to('edit question', edit_question_path(@question)) %>
+          <% end %>
+        </div>
       </div>
         <% @question.comments.each do |comment| %>
           <%= render 'shared/show_comment', comment: comment %>
         <% end %>
-      <% if @question_owner %>
-        <%= link_to('edit question', edit_question_path(@question)) %>
-      <% end %>
       <div class="makecomment">
         <%= link_to('comment', new_question_comment_path(@question)) %>
       </div>
