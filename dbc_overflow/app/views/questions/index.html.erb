@@ -1,8 +1,10 @@
 <div class="container">
   <h1 class="page_title">HEAR YE, ALL QUESTIONS BE HERE</h1>
-  <div class="addquestion">
-    <%= link_to('Ask a Question', new_question_path) %>
-  </div>
+  <% if !!session[:id] %>
+    <div class="addquestion">
+      <%= link_to('Ask a Question', new_question_path) %>
+    </div>
+  <% end %>
     <ul class="questions">
       <% @questions.each do |question| %>
 

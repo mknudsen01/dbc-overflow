@@ -333,6 +333,7 @@ li a:hover {
 }
 
 .answers h4 {
+  /*border-bottom: solid 4px #ADADAD;*/
   font-size: 30px;
   margin-bottom: 0;
 }
