@@ -89,6 +89,7 @@ li a:hover {
 .actualquestiontitle {
   color: #404040;
   margin-top: 0;
+  text-align: justify;
 }
 
 .questions {
