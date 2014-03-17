@@ -9,6 +9,8 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers.sort_by {|a| -a.votecount}
+    @answers_count = @answers.count
+    @best_answer = @answers.pop()
     @question_owner = owner?(@question)
     @user = session[:id]
   end
