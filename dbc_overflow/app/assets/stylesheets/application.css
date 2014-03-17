@@ -194,12 +194,12 @@ li a:hover {
   border-top: 1px dotted magenta;
 }
 
-.comment-upvote, .comment-downvote{
+.comment .upvote, .comment .downvote{
   width:100%;
   text-align: center;
 }
 
-.comment-vote-count{
+.comment .vote-count{
   font-size: 0.8em;
   width: 100%;
   text-align: center;

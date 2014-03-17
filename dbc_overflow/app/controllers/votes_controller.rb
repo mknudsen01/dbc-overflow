@@ -5,6 +5,7 @@ class VotesController < ApplicationController
   def upvote
     @vote.positive = true
     save_vote
+
   end
 
   def downvote
@@ -17,7 +18,9 @@ class VotesController < ApplicationController
   def save_vote
     @vote.user = current_user
     @vote.save
-    redirect_to :back
+    #redirect_to :back
+    render :json => { votecount: @voteable.votecount } , :status => 200
+
   end
 
   def load_vote
@@ -25,7 +28,7 @@ class VotesController < ApplicationController
   end
 
   def load_voteable
-    key = params.keys.select{ |key| key.match(/_id$/) }.first
+    key = params.keys.select{ |qey| qey.match(/_id$/) }.first
     klass = key.gsub('_id','').classify.constantize
     @voteable = klass.find(params["#{key}"])
   end

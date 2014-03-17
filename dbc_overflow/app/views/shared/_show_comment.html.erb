@@ -1,14 +1,14 @@
 
 <div class="comment">
-  <div class="comment_votes">
-    <div class="comment-upvote">
-      <%= link_to(image_tag('comment_uparrow.png'), comment_upvote_path(comment), method: 'POST') %>
+  <div class="comment_votes votes">
+    <div class="upvote">
+      <%= link_to(image_tag('comment_uparrow.png'), comment_upvote_path(comment), method: 'POST', remote: true) %>
     </div>
-    <div class="comment-vote-count">
+    <div class="vote-count">
       <%= comment.votecount %>
     </div>
-    <div class="comment-downvote">
-      <%= link_to(image_tag('comment_downarrow.png'), comment_downvote_path(comment), method: 'POST') %>
+    <div class="downvote">
+      <%= link_to(image_tag('comment_downarrow.png'), comment_downvote_path(comment), method: 'POST', remote: true) %>
     </div>
   </div>
 
