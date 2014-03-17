@@ -30,7 +30,7 @@
 
         <ul>
           <div class="answercomments">
-            <% answer.comments.each do |comment| %>
+            <% answer.comments.sort_by{|c|-c.votecount}.each do |comment| %>
               <li><%= render 'shared/show_comment', comment: comment %></li>
             <% end %>
           </div>
