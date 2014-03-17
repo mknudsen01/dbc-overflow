@@ -2,9 +2,11 @@
 
 .navbar {
   width: 100%;
+  min-height: 70px;
   background: #404040;
   height: 74px;
-  margin-top: -20px;
+  margin-top: -21px;
+  position: fixed;
 }
 
 .navbar li {
@@ -19,6 +21,7 @@
 }
 
 .rightnav a {
+  margin-top: -18px;
   color:white;
   float: right;
   margin-right: 40px;
@@ -28,6 +31,8 @@
   margin-top: -20px;
   color: steelblue ;
   float: left;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 #search {
@@ -35,7 +40,7 @@
 }
 
 .search_bar {
-  margin-top: 25px;
+  margin-top: 10px;
   display: inline-block;
 }
 
@@ -43,7 +48,7 @@
 /******************** BODY ********************/
 
 .container {
-    margin: 10px auto;
+    margin: 0px auto;
     width: 800px;
 }
 
@@ -52,13 +57,16 @@ body {
   margin: 0px;
   padding: 0px;
   border: 0px;
+  margin-top: 21px;
 }
 
 h1 {
   padding-bottom: 20px;
+  padding-top: 90px;
   margin-bottom: 25px;
   border-bottom: solid 1px gray;
 }
+
 
 
 
@@ -86,6 +94,11 @@ li a:hover {
 
 /******************** QUESTIONS ********************/
 
+.page_title {
+  width: 100%;
+  text-align: center;
+}
+
 .actualquestiontitle {
   color: #404040;
   margin-top: 0;
@@ -96,13 +109,45 @@ li a:hover {
   padding-bottom: 20px;
   padding-left: 0;
   margin-bottom: 35px;
-  border-bottom: solid 1px gray;
 }
 
-.question {
-  font-size: 1.25em;
-  display: inline-block;
+.title_votecount_and_question {
+  display: block;
+  min-height: 60px;
+  margin: 20px 0;
+  border-bottom: dotted 1px magenta;
 }
+
+.question-title-votecount {
+  float: left;
+  text-align: center;
+  vertical-align: center;
+  width: 50px;
+  min-height: 50px;
+  line-height: 20px;
+  color: white;
+  background: #CCCCCC;
+  border-radius: 100%;
+  margin-right: 20px;
+}
+
+.title-question-link {
+  width: 730px;
+  float: right;
+  font-size: 1.25em;
+  display: block;
+  min-height: 60px;
+}
+
+.title-question-link a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.title-question-link a:hover {
+  color: magenta;
+}
+
 
 .question_asker {
   padding-top: 10px;
@@ -132,6 +177,11 @@ li a:hover {
 
 
 /******************** ADD QUESTION BUTTON ********************/
+
+.addquestion {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 .addquestion a {
   padding: 5px;
@@ -218,6 +268,7 @@ li a:hover {
 
 .comment_giver {
   padding-top: 10px;
+  margin-bottom: 5px;
   font-size: 15px;
   color: #CCCCCC;
   text-align: right;
@@ -278,12 +329,11 @@ li a:hover {
 /******************** ANSWERS ********************/
 
 .answers {
-  border-top: solid 4px #ADADAD;
+/*  border-top: solid 4px #ADADAD;*/
 }
 
 .answers h4 {
   font-size: 30px;
-  margin-top: 40px;
   margin-bottom: 0;
 }
 
@@ -350,7 +400,6 @@ li a:hover {
 
 .new_answer_button {
   padding: 20px 0;
-  margin-top: 30px;
 }
 
 .new_answer_button a {

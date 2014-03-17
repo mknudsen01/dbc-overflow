@@ -19,11 +19,12 @@
         <%= @question.body %><br>
         <div class="question_asker">
           asked by: <%= @question.user.username %>
-        </div>
+
         <div class="editquestion">
           <% if @question_owner %>
             <%= link_to('edit question', edit_question_path(@question)) %>
           <% end %>
+        </div>
         </div>
       </div>
         <% @question.comments.each do |comment| %>
@@ -40,15 +41,15 @@
 
   <div class="answers">
     <h4>Answers: <%= @answers.count %></h4>
-    <ul>
-      <% @answers.each do |answer| %>
-        <%= render 'answers/show_answer_options', :answer => answer %>
-      <% end %>
-    </ul>
     <% if !!session[:id] %>
       <div class="new_answer_button">
         <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
       </div>
     <% end %>
+    <ul>
+      <% @answers.each do |answer| %>
+        <%= render 'answers/show_answer_options', :answer => answer %>
+      <% end %>
+    </ul>
   </div>
 </div>
