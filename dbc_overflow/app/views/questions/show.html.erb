@@ -42,7 +42,7 @@
     <h4>Answers: <%= @answers.count %></h4>
     <% if !!session[:id] %>
       <div class="new_answer_button">
-        <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
+        <%= link_to('Submit a new answer!', new_question_answer_path(@question), remote: true) %>
       </div>
     <% end %>
     <ul>

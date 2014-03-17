@@ -19,10 +19,16 @@ class AnswersController < ApplicationController
 
       @answer.user = current_user
       @answer.save
-      redirect_to question_path( @question )
+
+      render :partial => 'answers/show_answer_options',
+          :locals => {
+            answer: @answer
+          }
+      # redirect_to question_path( @question )
     else
       #put errors in flash here
-      redirect_to new_question_answer_path
+      render ''
+      # redirect_to new_question_answer_path
     end
   end
 

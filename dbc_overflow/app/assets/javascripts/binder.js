@@ -5,6 +5,7 @@ Binder.prototype = {
     bind: function() {
         this.bindUpVote();
         this.bindDownVote();
+        this.bindNewAnswerForm();
         this.bindNewAnswer();
     },
     // Votes
@@ -21,9 +22,15 @@ Binder.prototype = {
         });
     },
     // Answers
+    bindNewAnswerForm: function() {
+        var self = this;
+        $("body").on("ajax:complete", '.new_answer_button', function(e, response) {
+            self.controller.newAnswerFormAction(e, response);
+        });
+    },
     bindNewAnswer: function() {
         var self = this;
-        $("body").on("ajax:complete", '.new_answer', function(e, response) {
+        $("body").on("ajax:complete", '#new_answer', function(e, response) {
             self.controller.newAnswerAction(e, response);
         });
     }

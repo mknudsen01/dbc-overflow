@@ -14,10 +14,17 @@
 //= require jquery_ujs
 //= require_tree .
 DBCOverFlow = {};
+
+var assets = {
+    newAnswerButton: '<div class="new_answer_button"><a href="/questions/7/answers/new" data-remote="true">Submit a new answer!</a></div>'
+}
+
+
 $(document).ready(function() {
     DBCOverFlow.view = new View();
     DBCOverFlow.controller = new Controller({
-        view: DBCOverFlow.view
+        view: DBCOverFlow.view,
+        assets: assets
     });
     DBCOverFlow.binder = new Binder({
         controller: DBCOverFlow.controller
