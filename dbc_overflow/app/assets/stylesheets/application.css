@@ -215,6 +215,11 @@ li a:hover {
   vertical-align: middle;
 }
 
+.best_answer {
+  vertical-align: middle;
+  text-align: center;
+}
+
 .question_body {
   float: right;
   display: inline;

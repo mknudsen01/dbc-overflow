@@ -11,6 +11,7 @@ DbcOverflow::Application.routes.draw do
   end
 
   post 'search' => 'searches#search'
+  post "/questions/:id/mark_best_answer/:answer_id" => 'questions#mark_best_answer'
 
   resources :users
   resources :sessions,  :only => [:create, :destroy]
