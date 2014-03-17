@@ -1,0 +1,7 @@
+<div id="new-answer">
+  <h1>Answer this question</h1>
+  <%= form_for @answer, url: { action: "create" }, html: {class: "answer_form"} do |f|%>
+    <%= f.text_area :body, size: "60x20" %><br>
+    <%= f.submit "Create" %>
+  <% end %>
+</div>

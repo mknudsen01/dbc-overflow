@@ -1,13 +1,12 @@
 class AnswersController < ApplicationController
   before_filter :redirect_if_logged_out, :except => [:index, :show]
 
-
-  # def show
-  #   dont need this
-  # end
-
   def new
     @answer = Answer.new
+    render  :partial => 'answers/new',
+        :locals => {
+          question: @question
+        }
   end
 
   def create

@@ -30,7 +30,6 @@
         <% @question.comments.each do |comment| %>
           <%= render 'shared/show_comment', comment: comment %>
         <% end %>
-
       <% if !!session[:id] %>
         <div class="makecomment">
           <%= link_to('comment', new_question_comment_path(@question)) %>
