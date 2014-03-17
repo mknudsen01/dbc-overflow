@@ -18,10 +18,14 @@
       <div class="answer_body">
         <div class="answerbody">
           <%= answer.body %><br>
-          answered by: <%= answer.user.username %>
-          <% if @user == answer.user_id %>
-            <%= link_to('edit answer', edit_question_answer_path(@question, answer)) %>
-          <% end %>
+          <div class="answer_giver">
+            - <%= answer.user.username %>
+          </div>
+          <div class="editanswer">
+            <% if @user == answer.user_id %>
+              <%= link_to('edit answer', edit_question_answer_path(@question, answer)) %>
+            <% end %>
+          </div>
         </div>
 
         <ul>

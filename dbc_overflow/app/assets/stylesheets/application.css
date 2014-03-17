@@ -87,7 +87,8 @@ li a:hover {
 /******************** QUESTIONS ********************/
 
 .actualquestiontitle {
-  color: #1947D1;
+  color: #404040;
+  margin-top: 0;
 }
 
 .questions {
@@ -103,9 +104,29 @@ li a:hover {
 }
 
 .question_asker {
+  padding-top: 10px;
   font-size: 15px;
   color: #CCCCCC;
   text-align: right;
+}
+
+.editquestion {
+  text-align: right;
+  font-size: 20px;
+}
+
+.editquestion a {
+  padding: 3px 5px;
+  text-decoration: none;
+  background: #404040;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.editquestion a:hover {
+  background: magenta;
 }
 
 
@@ -194,6 +215,42 @@ li a:hover {
   padding-bottom: 10px;
 }
 
+.comment_giver {
+  padding-top: 10px;
+  font-size: 15px;
+  color: #CCCCCC;
+  text-align: right;
+}
+
+.editcomment, .deletecomment {
+  float: right;
+  margin-left: 10px;
+  margin-top: 5px;
+  background: #404040;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.editcomment a, .deletecomment a {
+  padding: 3px 5px;
+  text-decoration: none;
+  background: #404040;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.editcomment a:hover {
+  background: magenta;
+  color: white;
+}
+
+.deletecomment a:hover {
+  background: red;
+  color: white;
+}
+
 .makecomment {
   padding: 20px 0;
 }
@@ -204,7 +261,7 @@ li a:hover {
   background: #404040;
   color: white;
   border-radius: 5px;
-  font-size: 0.75em;
+  font-size: 15px;
   transition: background 0.3s ease;
 }
 
@@ -217,7 +274,7 @@ li a:hover {
 /******************** ANSWERS ********************/
 
 .answers {
-  border-top: solid 3px #ADADAD;
+  border-top: solid 4px #ADADAD;
 }
 
 .answers h4 {
@@ -257,6 +314,29 @@ li a:hover {
   font-size: 1.25em;
 }
 
+.answer_giver {
+  padding-top: 10px;
+  font-size: 15px;
+  color: #CCCCCC;
+  text-align: right;
+}
+
+.editanswer a {
+  float: right;
+  padding: 3px 5px;
+  text-decoration: none;
+  background: #404040;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: background 0.3s ease;
+}
+
+.editanswer a:hover {
+  background: magenta;
+  color: white;
+}
+
 
 .new_answer {
   padding: 20px 0;
@@ -292,4 +372,12 @@ li a:hover {
 }
 
 .makecomment {
+  display: block;
+}
+
+/******************** login ********************/
+
+#login {
+  text-align: left;
+  padding-left: 0;
 }
