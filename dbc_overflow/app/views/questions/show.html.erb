@@ -46,7 +46,7 @@
       <% end %>
     </ul>
     <% if !!session[:id] %>
-      <div class="new_answer">
+      <div class="new_answer_button">
         <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
       </div>
     <% end %>

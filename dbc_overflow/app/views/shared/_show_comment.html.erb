@@ -18,11 +18,13 @@
        - <%= comment.user.username %>
      </div>
     <% if @user == comment.user_id %>
-      <div class="editcomment">
-        <%= link_to 'edit', polymorphic_url([comment.commentable, comment], action: 'edit') %>
-      </div>
-      <div class="deletecomment">
-        <%= link_to 'delete', comment, method: 'delete' %>
+    <div class="edit_delete">
+        <div class="editcomment">
+          <%= link_to 'edit', polymorphic_url([comment.commentable, comment], action: 'edit') %>
+        </div>
+        <div class="deletecomment">
+          <%= link_to 'delete', comment, method: 'delete' %>
+        </div>
       </div>
     <% end %>
   </div>

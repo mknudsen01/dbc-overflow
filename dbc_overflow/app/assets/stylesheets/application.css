@@ -222,10 +222,13 @@ li a:hover {
   text-align: right;
 }
 
+.edit_delete {
+  margin-bottom: 10px;
+}
+
 .editcomment, .deletecomment {
   float: right;
   margin-left: 10px;
-  margin-top: 5px;
   background: #404040;
   border-radius: 5px;
   display: inline-block;
@@ -306,7 +309,7 @@ li a:hover {
   float: right;
   display: inline;
   width: 750px;
-  min-height: 40px;
+  min-height: 50px;
 }
 
 .answerbody {
@@ -319,6 +322,12 @@ li a:hover {
   font-size: 15px;
   color: #CCCCCC;
   text-align: right;
+}
+
+.editanswer {
+  display: block;
+  padding: 5px 0 10px 0;
+  margin-bottom: 25px;
 }
 
 .editanswer a {
@@ -338,12 +347,12 @@ li a:hover {
 }
 
 
-.new_answer {
+.new_answer_button {
   padding: 20px 0;
+  margin-top: 30px;
 }
 
-.new_answer a {
-  margin-top: 20px;
+.new_answer_button a {
   display: inline-block;
   padding: 3px 5px;
   text-decoration: none;
@@ -354,7 +363,7 @@ li a:hover {
   transition: background 0.3s ease;
 }
 
-.new_answer a:hover {
+.new_answer_button a:hover {
   background: magenta;
 }
 
