@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.text   :body, null: false
       t.belongs_to :question
       t.belongs_to :user
+      t.timestamps
     end
   end
 end
