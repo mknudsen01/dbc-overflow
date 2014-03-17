@@ -47,7 +47,7 @@
     <% end %>
     <ul>
       <% if @best_answer %>
-        <%= render 'answers/show_answer_options', :answer => @best_answer %>
+        <%= render 'answers/best_answer_options', :answer => @best_answer %>
       <% end %>
       <% @answers.each do |answer| %>
         <%= render 'answers/show_answer_options', :answer => answer %>

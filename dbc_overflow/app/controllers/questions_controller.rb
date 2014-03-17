@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @best_answer = Answer.find_by_id(@question.best_answer_id)
     @answers = @question.answers.sort_by {|a| -a.votecount}
+    # @best_answer = @answers.pop
     @answers_count = @answers.count
     @answers -= [@best_answer]
     @question_owner = owner?(@question)
@@ -50,8 +51,9 @@ class QuestionsController < ApplicationController
   end
 
   def mark_best_answer
-    @question = Question.find params[:id]
-
-    params[:id]
+    question = Question.find( params[:id] )
+    question.best_answer_id = params[:answer_id]
+    question.save
+    redirect_to :back
   end
 end

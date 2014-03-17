@@ -14,11 +14,7 @@
           <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST', remote: true) %>
         </div>
         <div class="best_answer">
-        <% if @user == @question.user_id %>
-          <%= link_to(image_tag('deathstar.png'), "#{@question.id}/mark_best_answer/#{answer.id}", method: 'POST') %>
-        <% else %>
-          <%= image_tag('deathstar.png') %>
-        <% end %>
+          <%= image_tag('yoda.png') %>
         </div>
 
       </div>
