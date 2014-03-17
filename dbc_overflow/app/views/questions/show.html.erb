@@ -29,9 +29,12 @@
         <% @question.comments.each do |comment| %>
           <%= render 'shared/show_comment', comment: comment %>
         <% end %>
-      <div class="makecomment">
-        <%= link_to('comment', new_question_comment_path(@question)) %>
-      </div>
+
+      <% if !!session[:id] %>
+        <div class="makecomment">
+          <%= link_to('comment', new_question_comment_path(@question)) %>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -42,8 +45,10 @@
         <%= render 'answers/show_answer_options', :answer => answer %>
       <% end %>
     </ul>
-    <div class="new_answer">
-      <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
-    </div>
+    <% if !!session[:id] %>
+      <div class="new_answer">
+        <%= link_to('Submit a new answer!', new_question_answer_path(@question)) %>
+      </div>
+    <% end %>
   </div>
 </div>

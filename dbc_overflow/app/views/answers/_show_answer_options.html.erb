@@ -35,10 +35,11 @@
             <% end %>
           </div>
         </ul>
-
-        <div class="makecomment">
-          <%= link_to('comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
-        </div>
+        <% if !!session[:id] %>
+          <div class="makecomment">
+            <%= link_to('comment', new_answer_comment_path(answer, answer_id: answer.id)) %>
+          </div>
+        <% end %>
       </div>
     </div>
   </li>
