@@ -19,12 +19,11 @@
         <%= @question.body %><br>
         <div class="question_asker">
           asked by: <%= @question.user.username %>
-
-        <div class="editquestion">
-          <% if @question_owner %>
-            <%= link_to('edit question', edit_question_path(@question)) %>
-          <% end %>
-        </div>
+          <div class="editquestion">
+            <% if @question_owner %>
+              <%= link_to('edit question', edit_question_path(@question)) %>
+            <% end %>
+          </div>
         </div>
       </div>
         <% @question.comments.each do |comment| %>

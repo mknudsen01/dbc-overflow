@@ -4,8 +4,10 @@ class CommentsController < ApplicationController
   before_filter :load_comment, except: [:create, :new]
 
   def new
+    # @answer = Answer.find(params)
+    redirect_to '/batman' && return unless @commentable
     @comment = Comment.new
-    render  :partial => 'answers/new',
+    render  :partial => 'shared/comment_form',
             :locals => {
               question: @question,
               comment: Comment.new,
