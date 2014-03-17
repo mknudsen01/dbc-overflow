@@ -2,15 +2,15 @@
   <div class="question">
     <h1 class="actualquestiontitle"><%= @question.title %></h1>
 
-    <div class="question_votes">
+    <div class="question_votes votes">
       <div class="upvote">
-        <%= link_to(image_tag('uparrow.png'), question_upvote_path(@question), method: 'POST') %>
+        <%= link_to(image_tag('uparrow.png'), question_upvote_path(@question), method: 'POST', remote: true) %>
       </div>
       <div class="vote-count">
         <%= @question.votecount %>
       </div>
       <div class="downvote">
-        <%= link_to(image_tag('downarrow.png'), question_downvote_path(@question), method: 'POST') %>
+        <%= link_to(image_tag('downarrow.png'), question_downvote_path(@question), method: 'POST', remote: true) %>
       </div>
     </div>
 

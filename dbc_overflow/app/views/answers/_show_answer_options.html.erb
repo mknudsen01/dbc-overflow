@@ -1,9 +1,9 @@
 <div class="complete_answer">
   <li>
     <div class="single_answer">
-      <div class="answer_votes">
+      <div class="answer_votes votes">
         <div class="upvote">
-          <%= link_to(image_tag('answer_uparrow.png'), answer_upvote_path(answer), method: 'POST') %>
+          <%= link_to(image_tag('answer_uparrow.png'), answer_upvote_path(answer), method: 'POST', remote: true) %>
         </div>
 
         <div class="vote-count">
@@ -11,7 +11,7 @@
         </div>
 
         <div class="downvote">
-          <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST') %>
+          <%= link_to(image_tag('answer_downarrow.png'), answer_downvote_path(answer), method: 'POST', remote: true) %>
         </div>
 
       </div>
