@@ -1,0 +1,5 @@
+<%= form_for @answer, url: { action: "create" }, html: {class: "answer_form"}, remote: true do |f|%>
+  <h1>Answer this question</h1>
+  <%= f.text_area :body, size: "60x20" %><br>
+  <%= f.submit "Create" %>
+<% end %>

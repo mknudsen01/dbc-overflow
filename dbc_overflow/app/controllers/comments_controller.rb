@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    render  :partial => 'shared/comment_form',
+    render  :partial => 'answers/new',
             :locals => {
               question: @question,
               comment: Comment.new,

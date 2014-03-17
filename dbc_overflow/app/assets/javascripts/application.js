@@ -13,57 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
 DBCOverFlow = {};
 
-DBCOverFlow.Controller = function(opts) {
-    this.view = opts.view;
-};
-DBCOverFlow.Controller.prototype = {
-    votedAction: function(e, response) {
-        var votecount = response.responseJSON.votecount;
-        var target = e.target
-        this.view.showVotes(target, votecount);
-    }
-};
-
-DBCOverFlow.View = function() {}
-DBCOverFlow.View.prototype = {
-    showVotes: function(target, votecount) {
-        $(target).parents('.votes').find('.vote-count').text(votecount);
-    }
+var assets = {
+    newAnswerButton: '<div class="new_answer_button"><a href="/questions/7/answers/new" data-remote="true">Submit a new answer!</a></div>'
 }
 
 
-DBCOverFlow.Binder = function(opts) {
-    this.controller = opts.controller;
-};
-DBCOverFlow.Binder.prototype = {
-    bind: function() {
-        this.bindUpVote();
-        this.bindDownVote();
-    },
-    bindUpVote: function() {
-        this.bindVoted('.upvote');
-    },
-    bindDownVote: function() {
-        this.bindVoted('.downvote');
-    },
-    bindVoted: function(vote) {
-        var self = this;
-        $("body").on("ajax:complete", vote, function(e, response) {
-            console.log('click')
-            self.controller.votedAction(e, response);
-        });
-    }
-};
-
 $(document).ready(function() {
-    DBCOverFlow.view = new DBCOverFlow.View();
-    DBCOverFlow.controller = new DBCOverFlow.Controller({
-        view: DBCOverFlow.view
+    DBCOverFlow.view = new View();
+    DBCOverFlow.controller = new Controller({
+        view: DBCOverFlow.view,
+        assets: assets
     });
-    DBCOverFlow.binder = new DBCOverFlow.Binder({
+    DBCOverFlow.binder = new Binder({
         controller: DBCOverFlow.controller
-    }).bind()
+    }).bind();
 });
