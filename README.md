@@ -4,10 +4,5 @@ DBC Overflow provides a single location for all questions/concerns and answers a
 
 DBC Overflow is a clone of Stack Overflow made as part of a group project in Week 7 of Dev Bootcamp.
 
-Made by: 
-* [Quentin Devauchelle](https://github.com/Qt-dev)  
-* [Matthew Knudsen](https://github.com/mknudsen01)
-* [Hunter Paull](https://github.com/hpchess)
-* [Armando Reed](https://github.com/trekkie4life)
-* [Chermaine Zimmerman](https://github.com/c14jcdj)
+Group members include: [Quentin Devauchelle](https://github.com/Qt-dev), [Matthew Knudsen](https://github.com/mknudsen01), [Hunter Paull](https://github.com/hpchess), [Armando Reed](https://github.com/trekkie4life), and [Chermaine Zimmerman](https://github.com/c14jcdj)
 
